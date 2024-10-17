@@ -1,6 +1,9 @@
 package configuration
 
 import (
+	"testing"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/control"
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/core/concurrency"
@@ -14,8 +17,6 @@ import (
 	"github.com/loggie-io/loggie/pkg/sink/codec"
 	"github.com/loggie-io/loggie/pkg/util/yaml"
 	"github.com/stretchr/testify/assert"
-	"testing"
-	"time"
 )
 
 func TestMergeDefault(t *testing.T) {

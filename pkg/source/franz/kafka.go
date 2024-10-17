@@ -19,6 +19,9 @@ package franz
 import (
 	"context"
 	"fmt"
+	"sync"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/core/log"
@@ -26,8 +29,6 @@ import (
 	"github.com/loggie-io/loggie/pkg/sink/franz"
 	"github.com/pkg/errors"
 	"github.com/twmb/franz-go/pkg/kgo"
-	"sync"
-	"time"
 )
 
 const (

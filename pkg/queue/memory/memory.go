@@ -270,7 +270,7 @@ func (ic *innerConsumer) Consume(lower, upper int64) {
 	ringBuffer := ic.queue.ringBuffer
 	ringBufferMask := ic.queue.ringBufferMask
 	size := int(upper - lower + 1)
-	//log.Info("disruptor-consumer count: %d", size)
+	// log.Info("disruptor-consumer count: %d", size)
 	if size < batchSize {
 		es := make([]api.Event, 0, size)
 		for lower <= upper {

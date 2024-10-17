@@ -19,12 +19,13 @@ package runtime
 import (
 	"context"
 	"fmt"
+	"path"
+
 	"github.com/loggie-io/loggie/pkg/core/log"
 	logconfigv1beta1 "github.com/loggie-io/loggie/pkg/discovery/kubernetes/apis/loggie/v1beta1"
 	"github.com/loggie-io/loggie/pkg/util/json"
 	"github.com/pkg/errors"
 	criapi "k8s.io/cri-api/pkg/apis/runtime/v1"
-	"path"
 )
 
 type RuntimeType string
@@ -63,7 +64,7 @@ func (c *ContainerD) getKataRuntimeRootfsPath(infoMap map[string]any, containerI
 		log.Debug("get info map: %s from container(id: %s)", string(im), containerId)
 		return "", errors.Errorf("cannot get sandboxID from container(id: %s) status", containerId)
 	}
-	//refer to https://github.com/kata-containers/kata-containers/blob/main/src/runtime/virtcontainers/kata_agent.go#L83
+	// refer to https://github.com/kata-containers/kata-containers/blob/main/src/runtime/virtcontainers/kata_agent.go#L83
 	rootfs := fmt.Sprintf("/run/kata-containers/shared/sandboxes/%v/shared/%v/rootfs", sandboxID, containerId)
 	return rootfs, nil
 }

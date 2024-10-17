@@ -20,11 +20,12 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"io"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/golang/snappy"

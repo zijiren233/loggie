@@ -18,8 +18,9 @@ package json_decode
 
 import (
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"strings"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
@@ -72,7 +73,6 @@ func (i *Interceptor) Start() error {
 }
 
 func (i *Interceptor) Stop() {
-
 }
 
 func (i *Interceptor) Intercept(invoker source.Invoker, invocation source.Invocation) api.Result {

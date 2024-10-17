@@ -34,10 +34,12 @@ import (
 	"github.com/loggie-io/loggie/pkg/util"
 )
 
-const Type = "logAlert"
-const NoDataKey = event.NoDataKey
-const addition = event.Addition
-const reasonKey = event.ReasonKey
+const (
+	Type      = "logAlert"
+	NoDataKey = event.NoDataKey
+	addition  = event.Addition
+	reasonKey = event.ReasonKey
+)
 
 func init() {
 	pipeline.Register(api.INTERCEPTOR, Type, makeInterceptor)
@@ -93,7 +95,6 @@ func (i *Interceptor) String() string {
 }
 
 func (i *Interceptor) Init(context api.Context) error {
-
 	if len(i.config.Matcher.Regexp) != 0 {
 		for _, r := range i.config.Matcher.Regexp {
 			regex := regexp.MustCompile(r) // after validated
@@ -136,7 +137,6 @@ func (i *Interceptor) Init(context api.Context) error {
 				i.done = make(chan struct{})
 			}
 		}
-
 	}
 
 	return nil
@@ -194,7 +194,6 @@ func (i *Interceptor) runTicker() {
 			}
 		}
 	}()
-
 }
 
 func (i *Interceptor) Intercept(invoker source.Invoker, invocation source.Invocation) api.Result {

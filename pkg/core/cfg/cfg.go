@@ -17,13 +17,14 @@ limitations under the License.
 package cfg
 
 import (
+	"io/ioutil"
+	"os"
+
 	"github.com/creasty/defaults"
 	"github.com/go-playground/validator/v10"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/util/yaml"
 	"github.com/pkg/errors"
-	"io/ioutil"
-	"os"
 )
 
 type CommonCfg map[string]interface{}
@@ -113,7 +114,6 @@ func MergeCommonMap(base map[interface{}]interface{}, from map[interface{}]inter
 		base[k] = v
 	}
 	return base
-
 }
 
 type UnPack struct {

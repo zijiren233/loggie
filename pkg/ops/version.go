@@ -18,10 +18,11 @@ package ops
 
 import (
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/control"
-	"github.com/loggie-io/loggie/pkg/core/global"
 	"net/http"
 	"strings"
+
+	"github.com/loggie-io/loggie/pkg/control"
+	"github.com/loggie-io/loggie/pkg/core/global"
 )
 
 const (
@@ -47,5 +48,4 @@ func (h *Version) VersionHandler(writer http.ResponseWriter, request *http.Reque
 	sb.WriteString(fmt.Sprintf((global.GetVersion() + "\n")))
 	writer.WriteHeader(http.StatusOK)
 	writer.Write([]byte(sb.String()))
-
 }

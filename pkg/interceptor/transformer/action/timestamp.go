@@ -17,13 +17,14 @@ limitations under the License.
 package action
 
 import (
+	"strconv"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/util/eventops"
 	timeutil "github.com/loggie-io/loggie/pkg/util/time"
 	"github.com/pkg/errors"
-	"strconv"
-	"time"
 )
 
 const (
@@ -70,7 +71,6 @@ func NewTimestamp(args []string, extra cfg.CommonCfg) (*Timestamp, error) {
 }
 
 func (t *Timestamp) act(e api.Event) error {
-
 	extra := t.extra
 	fromVal := eventops.GetString(e, t.key)
 

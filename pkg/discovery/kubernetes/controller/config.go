@@ -17,10 +17,11 @@ limitations under the License.
 package controller
 
 import (
+	"net/url"
+
 	"github.com/loggie-io/loggie/pkg/discovery/kubernetes/runtime"
 	"github.com/loggie-io/loggie/pkg/util/pattern"
 	"github.com/pkg/errors"
-	"net/url"
 )
 
 type Config struct {

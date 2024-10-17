@@ -18,6 +18,7 @@ package gui
 
 import (
 	"fmt"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/loggie-io/loggie/pkg/core/global"
 	"github.com/rivo/tview"

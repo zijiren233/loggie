@@ -19,10 +19,11 @@ package kubernetes_event
 import (
 	"context"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/global"
 	"go.uber.org/atomic"
@@ -207,7 +208,6 @@ func (k *KubeEvent) run(ctx context.Context, cli kubernetes.Interface) {
 			k.event <- newObj
 		},
 		DeleteFunc: func(obj interface{}) {
-
 		},
 	})
 

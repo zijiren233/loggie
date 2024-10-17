@@ -20,8 +20,7 @@ import (
 	"encoding/json"
 )
 
-type Std struct {
-}
+type Std struct{}
 
 func (s *Std) Marshal(v interface{}) ([]byte, error) {
 	return json.Marshal(v)

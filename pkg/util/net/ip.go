@@ -17,8 +17,9 @@ limitations under the License.
 package net
 
 import (
-	"github.com/pkg/errors"
 	"net"
+
+	"github.com/pkg/errors"
 )
 
 func GetHostIPv4() ([]string, error) {

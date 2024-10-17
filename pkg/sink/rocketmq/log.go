@@ -1,12 +1,12 @@
 package rocketmq
 
 import (
-	"github.com/loggie-io/loggie/pkg/core/log"
 	"strings"
+
+	"github.com/loggie-io/loggie/pkg/core/log"
 )
 
-type rocketMQLogWrapper struct {
-}
+type rocketMQLogWrapper struct{}
 
 // newLoggieLogWrapper returns a new logger that wraps the loggie logger, witch implements the rocketmq logger interface.
 // it aims to make the rocketmq logger compatible with loggie to avid rocketmq using its own log format.

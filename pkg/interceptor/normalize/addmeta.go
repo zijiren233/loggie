@@ -17,10 +17,11 @@ limitations under the License.
 package normalize
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"reflect"
 	"strings"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	eventer "github.com/loggie-io/loggie/pkg/core/event"

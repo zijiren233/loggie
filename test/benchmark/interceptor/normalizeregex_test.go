@@ -10,7 +10,6 @@ import (
 )
 
 func BenchmarkRegexProcess(b *testing.B) {
-
 	log.InitDefaultLogger()
 
 	interceptor := &normalize.Interceptor{}
@@ -48,5 +47,4 @@ func BenchmarkRegexProcess(b *testing.B) {
 			}
 		})
 	}
-
 }

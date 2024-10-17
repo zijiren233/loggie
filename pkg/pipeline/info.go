@@ -17,8 +17,9 @@ limitations under the License.
 package pipeline
 
 import (
-	"github.com/loggie-io/loggie/pkg/core/log"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/core/log"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"

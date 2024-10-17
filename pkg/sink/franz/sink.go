@@ -20,6 +20,7 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/core/result"
@@ -137,7 +138,6 @@ func (s *Sink) Start() error {
 	}
 
 	cl, err := kgo.NewClient(opts...)
-
 	if err != nil {
 		log.Error("kgo.NewClient error:%s", err)
 		return err

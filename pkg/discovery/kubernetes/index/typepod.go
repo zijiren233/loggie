@@ -122,7 +122,6 @@ func (p *LogConfigTypePodIndex) SetConfigs(pod *corev1.Pod, lgcName string, cfg 
 }
 
 func (p *LogConfigTypePodIndex) DeletePipeConfigsByLogConfigKey(lgcKey string) bool {
-
 	// find lgc related pods
 	podSets, ok := p.lgcToPodSets[lgcKey]
 	if !ok || podSets.Len() == 0 {

@@ -18,6 +18,7 @@ package normalize
 
 import (
 	"fmt"
+
 	"github.com/loggie-io/loggie/pkg/eventbus"
 
 	"github.com/loggie-io/loggie/pkg/core/api"

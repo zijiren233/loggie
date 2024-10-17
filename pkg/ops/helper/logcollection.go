@@ -18,10 +18,11 @@ package helper
 
 import (
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"math"
 	"net/http"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 )
 
 type LogCollectionStatus struct {
@@ -92,7 +93,6 @@ func (d *FileDetail) FmtDetails() string {
 }
 
 func (h *Helper) helperLogCollectionHandler(writer http.ResponseWriter, request *http.Request) {
-
 	result := &LogCollectionStatus{}
 
 	statusQuery := request.URL.Query().Get(queryStatus)

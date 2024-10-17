@@ -17,8 +17,9 @@ limitations under the License.
 package elasticsearch
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/pattern"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/pattern"
 )
 
 type Config struct {

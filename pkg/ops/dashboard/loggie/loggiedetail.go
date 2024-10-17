@@ -18,6 +18,12 @@ package loggie
 
 import (
 	"fmt"
+	"io"
+	"net/http"
+	"net/url"
+	"strings"
+	"time"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/loggie-io/loggie/pkg/ops/dashboard/content"
 	"github.com/loggie-io/loggie/pkg/ops/dashboard/gui"
@@ -25,11 +31,6 @@ import (
 	"github.com/loggie-io/loggie/pkg/util"
 	jsoniter "github.com/loggie-io/loggie/pkg/util/json"
 	"github.com/rivo/tview"
-	"io"
-	"net/http"
-	"net/url"
-	"strings"
-	"time"
 )
 
 const (

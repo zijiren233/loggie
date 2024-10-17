@@ -38,8 +38,7 @@ type Vm struct {
 	Status VmStatus `json:"status"`
 }
 
-type VmSpec struct {
-}
+type VmSpec struct{}
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 

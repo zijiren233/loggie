@@ -19,15 +19,16 @@ package dev
 import (
 	"errors"
 	"fmt"
+	"net/http"
+	"sync"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/core/result"
 	"github.com/loggie-io/loggie/pkg/pipeline"
 	"github.com/loggie-io/loggie/pkg/sink/codec"
 	"go.uber.org/atomic"
-	"net/http"
-	"sync"
-	"time"
 )
 
 const Type = "dev"

@@ -1,11 +1,12 @@
 package action
 
 import (
+	"testing"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/stretchr/testify/assert"
-	"testing"
-	"time"
 )
 
 func TestTimestamp_act(t *testing.T) {

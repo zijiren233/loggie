@@ -90,6 +90,7 @@ func (g *Gui) filter() {
 
 	g.Pages.AddAndSwitchToPage(viewName, g.modal(searchInput, 80, 3), true).ShowPage(g.panels.currentPage)
 }
+
 func (g *Gui) refresh() {
 	page := g.panels.currentPage
 	pagePanel, ok := g.panels.panel[page]

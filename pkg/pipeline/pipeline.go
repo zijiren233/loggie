@@ -18,12 +18,13 @@ package pipeline
 
 import (
 	"fmt"
-	timeutil "github.com/loggie-io/loggie/pkg/util/time"
 	"os"
 	"strconv"
 	"strings"
 	"sync"
 	"time"
+
+	timeutil "github.com/loggie-io/loggie/pkg/util/time"
 
 	"github.com/panjf2000/ants/v2"
 	"github.com/pkg/errors"
@@ -380,7 +381,6 @@ func (p *Pipeline) afterSinkConsumer(b api.Batch, result api.Result) {
 
 // commit to source and release batch
 func (p *Pipeline) finalizeBatch(batch api.Batch) {
-
 	nes := make(map[string][]api.Event)
 	events := batch.Events()
 	l := len(events)
@@ -546,7 +546,6 @@ func (p *Pipeline) startSinkConsumer(sinkConfig *sink.Config) {
 		p.gpoolMaxSize = sinkConfig.Parallelism
 		p.tuneGPool(sinkConfig.Parallelism)
 	}
-
 }
 
 // outfunc may have been combined, but batch has been released in advance
@@ -826,11 +825,9 @@ func (p *Pipeline) startGPoolCalculator() {
 			}
 		}
 	}()
-
 }
 
 func (p *Pipeline) tuneGPool(targetCap int) {
-
 	if targetCap <= 1 {
 		log.Debug("gpool size should be larger than 1")
 		targetCap = 2
@@ -873,7 +870,6 @@ func (p *Pipeline) stopGPool() {
 		pool.Release()
 		log.Info("goroutine pool released")
 	}
-
 }
 
 func buildSinkInvokerChain(invoker sink.Invoker, interceptors []sink.Interceptor, retry bool) sink.Invoker {

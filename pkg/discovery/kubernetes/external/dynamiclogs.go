@@ -18,8 +18,9 @@ package external
 
 import (
 	"fmt"
-	"k8s.io/apimachinery/pkg/util/sets"
 	"sync"
+
+	"k8s.io/apimachinery/pkg/util/sets"
 )
 
 const SystemContainerLogsPath = "containerLogs"

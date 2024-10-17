@@ -66,7 +66,6 @@ func GroupAlerts(alertMap event.AlertMap, alerts []event.Alert, sendFunc event.P
 	for key := range keyMap {
 		checkAlertsLists(key)
 	}
-
 }
 
 func GroupAlertsAtOnce(alerts []event.Alert, sendFunc event.PackageAndSendAlerts, p GroupConfig) {

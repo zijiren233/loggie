@@ -17,10 +17,11 @@ limitations under the License.
 package subcmd
 
 import (
+	"os"
+
 	"github.com/loggie-io/loggie/cmd/subcmd/genfiles"
 	"github.com/loggie-io/loggie/cmd/subcmd/inspect"
 	"github.com/loggie-io/loggie/cmd/subcmd/version"
-	"os"
 )
 
 func SwitchSubCommand() error {

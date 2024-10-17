@@ -591,7 +591,7 @@ func (w *Watcher) scanZombieJob() {
 		}
 		filename := job.filename
 		stat, err := os.Stat(filename)
-		var checkRemove = func() bool {
+		checkRemove := func() bool {
 			if err != nil {
 				if os.IsNotExist(err) {
 					w.eventBus(jobEvent{

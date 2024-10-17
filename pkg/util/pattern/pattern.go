@@ -17,12 +17,13 @@ limitations under the License.
 package pattern
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/runtime"
-	"github.com/loggie-io/loggie/pkg/util/time"
-	"github.com/pkg/errors"
 	"os"
 	"regexp"
 	"strings"
+
+	"github.com/loggie-io/loggie/pkg/util/runtime"
+	"github.com/loggie-io/loggie/pkg/util/time"
+	"github.com/pkg/errors"
 )
 
 const (
@@ -62,6 +63,7 @@ type matcher struct {
 func isEnvVar(key string) bool {
 	return strings.HasPrefix(key, envToken)
 }
+
 func envMatcherRender(key string) string {
 	ev := strings.TrimLeft(key, envToken)
 	return os.Getenv(ev)
@@ -71,6 +73,7 @@ func envMatcherRender(key string) string {
 func isTimeVar(key string) bool {
 	return strings.HasPrefix(key, timeToken)
 }
+
 func timeMatcherRender(key string) string {
 	return time.TimeFormatNow(strings.TrimLeft(key, timeToken))
 }
@@ -215,9 +218,9 @@ func (p *Pattern) WithVm(data *TypeVmFieldsData) *Pattern {
 
 // GetSplits
 // eg: target="/var/log/${pod.uid}/${pod.name}/"
-//     returns ["var/log/", "/", "/"] and ["pod.uid", "pod.name"]
+//
+//	returns ["var/log/", "/", "/"] and ["pod.uid", "pod.name"]
 func GetSplits(target string) (splitStr []string, matchers []string) {
-
 	var splitStrList []string
 	var matcherList []string
 
@@ -265,7 +268,8 @@ func GetSplits(target string) (splitStr []string, matchers []string) {
 
 // Extract
 // eg: input="/var/log/76fb94cbb5/tomcat/", splitsStr=["/var/log/", "/", "/"]
-//     return ["76fb94cbb5", "tomcat"]
+//
+//	return ["76fb94cbb5", "tomcat"]
 func Extract(input string, splitsStr []string) []string {
 	var ret []string
 	segment := input

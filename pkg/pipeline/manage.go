@@ -18,8 +18,9 @@ package pipeline
 
 import (
 	"fmt"
-	"github.com/pkg/errors"
 	"sync"
+
+	"github.com/pkg/errors"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"

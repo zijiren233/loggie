@@ -19,7 +19,6 @@ import (
 )
 
 func TestGetConfigFromPodAndLogConfig(t *testing.T) {
-
 	ctrl := &Controller{
 		config: &Config{
 			PodLogDirPrefix: "/var/log/pods",

@@ -166,7 +166,6 @@ func (c *Controller) handleLogConfigTypePodAddOrUpdate(lgc *logconfigv1beta1.Log
 }
 
 func (c *Controller) handlePodAddOrUpdate(pod *corev1.Pod) error {
-
 	// check if pod is in the index or container id has changed
 	if !c.typePodIndex.IsPodUpdated(pod) {
 		log.Info("pod: %s/%s is in index and unchanged, ignore pod addOrUpdate event", pod.Namespace, pod.Name)
@@ -280,8 +279,8 @@ func (c *Controller) handleLogConfigPerPod(lgc *logconfigv1beta1.LogConfig, pod 
 }
 
 func (c *Controller) getConfigFromPodAndLogConfig(lgc *logconfigv1beta1.LogConfig, pod *corev1.Pod,
-	sinkLister v1beta1.SinkLister, interceptorLister v1beta1.InterceptorLister) (*pipeline.Config, error) {
-
+	sinkLister v1beta1.SinkLister, interceptorLister v1beta1.InterceptorLister,
+) (*pipeline.Config, error) {
 	if len(pod.Status.ContainerStatuses) == 0 {
 		return nil, nil
 	}
@@ -293,8 +292,8 @@ func (c *Controller) getConfigFromPodAndLogConfig(lgc *logconfigv1beta1.LogConfi
 }
 
 func (c *Controller) getConfigFromContainerAndLogConfig(lgc *logconfigv1beta1.LogConfig, pod *corev1.Pod,
-	sinkLister v1beta1.SinkLister, interceptorLister v1beta1.InterceptorLister) (*pipeline.Config, error) {
-
+	sinkLister v1beta1.SinkLister, interceptorLister v1beta1.InterceptorLister,
+) (*pipeline.Config, error) {
 	logConf := lgc.DeepCopy()
 	sourceConfList := make([]*source.Config, 0)
 	err := cfg.UnPackFromRaw([]byte(logConf.Spec.Pipeline.Sources), &sourceConfList).Do()

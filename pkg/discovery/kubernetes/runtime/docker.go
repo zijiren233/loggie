@@ -18,11 +18,12 @@ package runtime
 
 import (
 	"context"
+	"path"
+
 	dockerclient "github.com/docker/docker/client"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	logconfigv1beta1 "github.com/loggie-io/loggie/pkg/discovery/kubernetes/apis/loggie/v1beta1"
 	"github.com/pkg/errors"
-	"path"
 )
 
 type Docker struct {

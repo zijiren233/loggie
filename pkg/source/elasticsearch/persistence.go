@@ -18,10 +18,11 @@ package elasticsearch
 
 import (
 	"context"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/util/json"
 	"github.com/olivere/elastic/v7"
 	"github.com/pkg/errors"
-	"time"
 )
 
 type DBConfig struct {

@@ -19,10 +19,11 @@ package retry
 import (
 	"errors"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/core/result"
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/core/result"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/interceptor"

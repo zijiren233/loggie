@@ -18,11 +18,12 @@ package schema
 
 import (
 	"fmt"
+	"time"
+
 	eventer "github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/util/eventops"
 	timeutil "github.com/loggie-io/loggie/pkg/util/time"
-	"time"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/source"

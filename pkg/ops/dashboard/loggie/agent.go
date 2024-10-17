@@ -19,6 +19,8 @@ package loggie
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/ops/dashboard/gui"
@@ -27,14 +29,11 @@ import (
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
-	"strings"
 )
 
 const AgentPanelName = "Agent"
 
-var (
-	cellColor = gui.ColorYellow
-)
+var cellColor = gui.ColorYellow
 
 type AgentPanel struct {
 	gui *gui.Gui
@@ -207,7 +206,6 @@ func renderTable(t *tview.Table, states []AgentState) {
 			SetMaxWidth(0).
 			SetExpansion(1))
 	}
-
 }
 
 func (l *AgentPanel) UpdateData(g *gui.Gui) {

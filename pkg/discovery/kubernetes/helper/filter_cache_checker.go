@@ -2,6 +2,7 @@ package helper
 
 import (
 	"context"
+
 	"github.com/loggie-io/loggie/pkg/core/log"
 	logconfigv1beta1 "github.com/loggie-io/loggie/pkg/discovery/kubernetes/apis/loggie/v1beta1"
 	corev1 "k8s.io/api/core/v1"
@@ -88,7 +89,6 @@ func newFilterCacheChecker(lgc *logconfigv1beta1.LogConfig, clientSet kubeclient
 					}
 				}
 			}
-
 		}
 	}
 
@@ -121,7 +121,6 @@ func (p *filterCacheChecker) checkNamespace(pod *corev1.Pod) bool {
 }
 
 func (p *filterCacheChecker) checkOwner(owner metav1.OwnerReference, namespace string) (bool, error) {
-
 	// If workloadSelector is not selected, then all are consistent by default.
 	if len(p.workloadSelector) == 0 {
 		return true, nil

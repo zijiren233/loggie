@@ -17,12 +17,13 @@ limitations under the License.
 package action
 
 import (
+	"regexp"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/util"
 	"github.com/loggie-io/loggie/pkg/util/runtime"
 	"github.com/pkg/errors"
-	"regexp"
 )
 
 const (

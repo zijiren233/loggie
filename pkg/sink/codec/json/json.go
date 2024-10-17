@@ -17,9 +17,10 @@ limitations under the License.
 package json
 
 import (
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/util"
-	"time"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	eventer "github.com/loggie-io/loggie/pkg/core/event"

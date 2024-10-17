@@ -19,6 +19,8 @@ package clusterlogconfig
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	logconfigv1beta1 "github.com/loggie-io/loggie/pkg/discovery/kubernetes/apis/loggie/v1beta1"
@@ -31,7 +33,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
 	"sigs.k8s.io/yaml"
-	"strings"
 )
 
 const (

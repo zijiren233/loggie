@@ -17,11 +17,12 @@ limitations under the License.
 package action
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/util/pattern"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestFmt_act(t *testing.T) {

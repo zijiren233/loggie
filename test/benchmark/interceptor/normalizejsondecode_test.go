@@ -10,7 +10,6 @@ import (
 )
 
 func BenchmarkJSONDecodeProcess(b *testing.B) {
-
 	log.InitDefaultLogger()
 
 	tests := []struct {
@@ -43,5 +42,4 @@ func BenchmarkJSONDecodeProcess(b *testing.B) {
 			}
 		})
 	}
-
 }

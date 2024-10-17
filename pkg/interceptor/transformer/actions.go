@@ -133,7 +133,6 @@ type ConditionActionStep struct {
 }
 
 func NewConditionActionStep(config condition.Config) (*ConditionActionStep, error) {
-
 	step := &ConditionActionStep{}
 
 	// init `if` conditions

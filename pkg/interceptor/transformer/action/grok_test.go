@@ -1,11 +1,12 @@
 package action
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func Test_grokAction_act(t *testing.T) {
@@ -26,10 +27,11 @@ func Test_grokAction_act(t *testing.T) {
 	}{
 		{
 			name: "normal IgnoreBlank Overwrite UseDefaultPattern",
-			fields: fields{config: &grokConfig{
-				Match:       "^%{DATESTAMP:datetime} (?P<file>[a-zA-Z0-9._-]+):%{INT:line}: %{IPV4:ip} %{PATH:path} %{UUID:uuid}(?P<space>[a-zA-Z]?)",
-				IgnoreBlank: &T,
-			},
+			fields: fields{
+				config: &grokConfig{
+					Match:       "^%{DATESTAMP:datetime} (?P<file>[a-zA-Z0-9._-]+):%{INT:line}: %{IPV4:ip} %{PATH:path} %{UUID:uuid}(?P<space>[a-zA-Z]?)",
+					IgnoreBlank: &T,
+				},
 				key: "body",
 			},
 			args: args{e: &event.DefaultEvent{
@@ -49,10 +51,11 @@ func Test_grokAction_act(t *testing.T) {
 		},
 		{
 			name: "IgnoreBlank false",
-			fields: fields{config: &grokConfig{
-				Match:       "^%{DATESTAMP:datetime} (?P<file>[a-zA-Z0-9._-]+):%{INT:line}: %{IPV4:ip} %{PATH:path} %{UUID:uuid}(?P<space>[a-zA-Z]?)",
-				IgnoreBlank: &F,
-			},
+			fields: fields{
+				config: &grokConfig{
+					Match:       "^%{DATESTAMP:datetime} (?P<file>[a-zA-Z0-9._-]+):%{INT:line}: %{IPV4:ip} %{PATH:path} %{UUID:uuid}(?P<space>[a-zA-Z]?)",
+					IgnoreBlank: &F,
+				},
 				key: "body",
 			},
 			args: args{e: &event.DefaultEvent{
@@ -73,13 +76,14 @@ func Test_grokAction_act(t *testing.T) {
 		},
 		{
 			name: "use Pattern by user",
-			fields: fields{config: &grokConfig{
-				Match:       "^%{DATESTAMP:datetime} %{FILE:file}:%{INT:line}: %{IPV4:ip} %{PATH:path} %{UUID:uuid}(?P<space>[a-zA-Z]?)",
-				IgnoreBlank: &T,
-				Pattern: map[string]string{
-					"FILE": "[a-zA-Z0-9._-]+",
+			fields: fields{
+				config: &grokConfig{
+					Match:       "^%{DATESTAMP:datetime} %{FILE:file}:%{INT:line}: %{IPV4:ip} %{PATH:path} %{UUID:uuid}(?P<space>[a-zA-Z]?)",
+					IgnoreBlank: &T,
+					Pattern: map[string]string{
+						"FILE": "[a-zA-Z0-9._-]+",
+					},
 				},
-			},
 				key: "body",
 			},
 			args: args{e: &event.DefaultEvent{
@@ -99,13 +103,14 @@ func Test_grokAction_act(t *testing.T) {
 		},
 		{
 			name: "use user Pattern to overwrite DefaultPattern",
-			fields: fields{config: &grokConfig{
-				Match:       "^%{DATESTAMP:datetime} %{WORD:file}:%{INT:line}: %{IPV4:ip} %{PATH:path} %{UUID:uuid}(?P<space>[a-zA-Z]?)",
-				IgnoreBlank: &T,
-				Pattern: map[string]string{
-					"WORD": "[a-zA-Z0-9._-]+",
+			fields: fields{
+				config: &grokConfig{
+					Match:       "^%{DATESTAMP:datetime} %{WORD:file}:%{INT:line}: %{IPV4:ip} %{PATH:path} %{UUID:uuid}(?P<space>[a-zA-Z]?)",
+					IgnoreBlank: &T,
+					Pattern: map[string]string{
+						"WORD": "[a-zA-Z0-9._-]+",
+					},
 				},
-			},
 				key: "body",
 			},
 			args: args{e: &event.DefaultEvent{

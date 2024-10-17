@@ -17,11 +17,12 @@ limitations under the License.
 package franz
 
 import (
+	"regexp"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/sink/franz"
 	"github.com/pkg/errors"
 	"github.com/twmb/franz-go/pkg/kgo"
-	"regexp"
-	"time"
 )
 
 const (

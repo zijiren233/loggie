@@ -18,12 +18,13 @@ package maxbytes
 
 import (
 	"fmt"
+	"unicode/utf8"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	eventer "github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/core/source"
 	"github.com/loggie-io/loggie/pkg/pipeline"
 	"github.com/loggie-io/loggie/pkg/util/eventops"
-	"unicode/utf8"
 )
 
 const Type = "maxbytes"

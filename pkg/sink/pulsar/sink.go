@@ -3,6 +3,8 @@ package pulsar
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/apache/pulsar-client-go/pulsar"
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
@@ -10,7 +12,6 @@ import (
 	"github.com/loggie-io/loggie/pkg/pipeline"
 	"github.com/loggie-io/loggie/pkg/sink/codec"
 	"github.com/pkg/errors"
-	"time"
 )
 
 const Type = "pulsar"

@@ -19,6 +19,8 @@ package logconfig
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/loggie-io/loggie/pkg/discovery/kubernetes/helper"
 	"github.com/loggie-io/loggie/pkg/ops/dashboard/content"
@@ -27,7 +29,6 @@ import (
 	"github.com/rivo/tview"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"sigs.k8s.io/yaml"
-	"strings"
 )
 
 const (
@@ -291,7 +292,6 @@ func (l *PodSelectorPanel) SetData() {
 			SetMaxWidth(0).
 			SetExpansion(1))
 	}
-
 }
 
 func (l *PodSelectorPanel) UpdateData(g *gui.Gui) {

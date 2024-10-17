@@ -19,9 +19,10 @@ package genfiles
 import (
 	"errors"
 	"flag"
+	"os"
+
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/source/dev"
-	"os"
 )
 
 const (

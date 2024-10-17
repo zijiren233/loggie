@@ -19,12 +19,14 @@ package loggie
 import (
 	"bufio"
 	"context"
+	"io"
+	"time"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/loggie-io/loggie/pkg/ops/dashboard/gui"
 	"github.com/rivo/tview"
-	"io"
+
 	corev1 "k8s.io/api/core/v1"
-	"time"
 )
 
 const (

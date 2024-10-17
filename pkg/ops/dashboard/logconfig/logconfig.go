@@ -19,6 +19,8 @@ package logconfig
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	logconfigv1beta1 "github.com/loggie-io/loggie/pkg/discovery/kubernetes/apis/loggie/v1beta1"
@@ -27,14 +29,11 @@ import (
 	"github.com/rivo/tview"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
-	"strings"
 )
 
 const PanelName = "LogConfig"
 
-var (
-	cellColor = gui.ColorGreen
-)
+var cellColor = gui.ColorGreen
 
 type Panel struct {
 	gui *gui.Gui
@@ -150,7 +149,6 @@ func renderTable(t *tview.Table, states []State) {
 			SetMaxWidth(0).
 			SetExpansion(1))
 	}
-
 }
 
 func (l *Panel) UpdateData(g *gui.Gui) {

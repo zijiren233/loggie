@@ -1,11 +1,12 @@
 package source
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/source/codec"
 	"github.com/loggie-io/loggie/pkg/util/yaml"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestConfig_Unmarshal(t *testing.T) {
@@ -53,7 +54,6 @@ func TestConfig_Unmarshal(t *testing.T) {
 }
 
 func TestConfig_Marshal(t *testing.T) {
-
 	tests := []struct {
 		name string
 		args Config

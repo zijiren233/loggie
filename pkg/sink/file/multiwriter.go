@@ -27,9 +27,7 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-var (
-	LineEnding = []byte("\n")
-)
+var LineEnding = []byte("\n")
 
 type Options struct {
 	WorkerCount int

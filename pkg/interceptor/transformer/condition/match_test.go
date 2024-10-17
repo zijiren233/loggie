@@ -17,11 +17,12 @@ limitations under the License.
 package condition
 
 import (
+	"regexp"
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/stretchr/testify/assert"
-	"regexp"
-	"testing"
 )
 
 func TestMatch_Check(t *testing.T) {

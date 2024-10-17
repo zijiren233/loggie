@@ -81,7 +81,6 @@ func (i *Interceptor) Start() error {
 }
 
 func (i *Interceptor) Stop() {
-
 }
 
 func (i *Interceptor) Intercept(invoker sink.Invoker, invocation sink.Invocation) api.Result {

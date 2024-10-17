@@ -153,5 +153,4 @@ func (c *Controller) modifyNodePath(src *source.Config) error {
 	fileSource.CollectConfig.Paths = newPaths
 
 	return setFileSource(src, fileSource)
-
 }

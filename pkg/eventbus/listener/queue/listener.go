@@ -17,9 +17,10 @@ limitations under the License.
 package queue
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"strings"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/prometheus/client_golang/prometheus"
 
@@ -114,6 +115,7 @@ func (l *Listener) run() {
 		}
 	}
 }
+
 func (l *Listener) exportPrometheus() {
 	metrics := promeExporter.ExportedMetrics{}
 	for _, d := range l.data {

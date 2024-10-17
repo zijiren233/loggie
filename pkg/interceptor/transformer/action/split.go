@@ -17,12 +17,13 @@ limitations under the License.
 package action
 
 import (
+	"strings"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/util/eventops"
 	"github.com/pkg/errors"
-	"strings"
 )
 
 const (
@@ -82,7 +83,6 @@ func (r *Split) act(e api.Event) error {
 			k := keys[i]
 			eventops.Set(e, k, r)
 		}
-
 	} else {
 		obj := make(map[string]interface{})
 		for i, r := range splitResult {

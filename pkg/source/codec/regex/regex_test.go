@@ -2,11 +2,12 @@ package regex
 
 import (
 	"fmt"
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/source/codec"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func Test_decoder(t *testing.T) {

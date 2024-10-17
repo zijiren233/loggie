@@ -2,6 +2,7 @@ package helper
 
 import (
 	"errors"
+
 	logconfigv1beta1 "github.com/loggie-io/loggie/pkg/discovery/kubernetes/apis/loggie/v1beta1"
 	corev1 "k8s.io/api/core/v1"
 	kubeclientset "k8s.io/client-go/kubernetes"

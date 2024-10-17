@@ -10,7 +10,6 @@ import (
 )
 
 func BenchmarkSplitProcess(b *testing.B) {
-
 	log.InitDefaultLogger()
 
 	tests := []struct {
@@ -72,5 +71,4 @@ func BenchmarkSplitProcess(b *testing.B) {
 			}
 		})
 	}
-
 }

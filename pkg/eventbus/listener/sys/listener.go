@@ -18,11 +18,12 @@ package sys
 
 import (
 	"fmt"
-	"github.com/dustin/go-humanize"
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/dustin/go-humanize"
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
@@ -118,7 +119,6 @@ func (l *Listener) export() {
 }
 
 func (l *Listener) getSysStat() error {
-
 	mem, err := l.proc.MemoryInfo()
 	if err != nil {
 		return err

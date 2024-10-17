@@ -19,6 +19,7 @@ package action
 import (
 	"errors"
 	"fmt"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 )
@@ -36,8 +37,7 @@ func init() {
 	})
 }
 
-type DropEvent struct {
-}
+type DropEvent struct{}
 
 func NewDropEvent(args []string) (*DropEvent, error) {
 	if len(args) != 0 {

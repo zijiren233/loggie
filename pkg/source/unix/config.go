@@ -20,7 +20,7 @@ func (c *Config) Validate() error {
 		if err != nil {
 			return err
 		}
-		if parsed > 0777 {
+		if parsed > 0o777 {
 			return errors.New("invalid file mode")
 		}
 	}

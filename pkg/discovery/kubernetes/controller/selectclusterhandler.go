@@ -25,7 +25,6 @@ import (
 )
 
 func (c *Controller) handleLogConfigTypeCluster(lgc *logconfigv1beta1.LogConfig) error {
-
 	pipRaws, err := helper.ToPipeline(lgc, c.sinkLister, c.interceptorLister)
 	if err != nil {
 		return errors.WithMessage(err, "convert to pipeline config failed")

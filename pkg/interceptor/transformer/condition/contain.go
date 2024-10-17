@@ -17,10 +17,11 @@ limitations under the License.
 package condition
 
 import (
+	"strings"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/util/eventops"
 	"github.com/pkg/errors"
-	"strings"
 )
 
 const (

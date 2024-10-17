@@ -241,7 +241,6 @@ func (k *Source) consume(productFunc api.ProductFunc) error {
 		if err := k.consumer.CommitMessages(ctx, msg); err != nil {
 			return errors.Errorf("consumer auto commit message error: %v", err)
 		}
-
 	} else {
 		// set fields to metadata for kafka commit message
 		if meta == nil {

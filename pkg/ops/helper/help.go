@@ -18,6 +18,12 @@ package helper
 
 import (
 	"fmt"
+	"net/http"
+	"os"
+	"sort"
+	"strings"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/control"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/core/reloader"
@@ -26,11 +32,6 @@ import (
 	"github.com/loggie-io/loggie/pkg/pipeline"
 	"github.com/loggie-io/loggie/pkg/source/file"
 	"github.com/loggie-io/loggie/pkg/util/yaml"
-	"net/http"
-	"os"
-	"sort"
-	"strings"
-	"time"
 )
 
 const (
@@ -186,7 +187,7 @@ func queryPipelineConfig(cfgInPath *control.PipelineConfig, pipelineQuery string
 			return
 		}
 
-		var data = pipData
+		data := pipData
 		if len(srcData) > 0 {
 			data = pipeline.Config{
 				Name:         pipData.Name,
@@ -214,7 +215,6 @@ func queryPipelineConfig(cfgInPath *control.PipelineConfig, pipelineQuery string
 			if pip.Name == pipelineQuery {
 				setResult(pip)
 			}
-
 		} else if sourceQuery != "" {
 			for _, src := range pip.Sources {
 				if src.Name == sourceQuery {
@@ -334,17 +334,14 @@ func fileInfoMetrics(request *http.Request) (active int, inActive int, metric ma
 			if val.PipelineName == pipelineQuery && val.SourceName == sourceQuery {
 				setData(val.PipelineName, val)
 			}
-
 		} else if pipelineQuery != "" {
 			if val.PipelineName == pipelineQuery {
 				setData(val.PipelineName, val)
 			}
-
 		} else if sourceQuery != "" {
 			if val.SourceName == sourceQuery {
 				setData(val.PipelineName, val)
 			}
-
 		} else {
 			setData(val.PipelineName, val)
 		}

@@ -18,10 +18,11 @@ package event
 
 import (
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/json"
-	"github.com/pkg/errors"
 	"strings"
 	"sync"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
+	"github.com/pkg/errors"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 )

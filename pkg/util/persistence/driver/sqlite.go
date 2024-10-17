@@ -21,14 +21,15 @@ package driver
 import (
 	"database/sql"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/core/log"
-	"github.com/loggie-io/loggie/pkg/util/persistence/reg"
-	_ "github.com/mattn/go-sqlite3"
-	"github.com/pkg/errors"
 	"os"
 	"path/filepath"
 	"strings"
 	"sync"
+
+	"github.com/loggie-io/loggie/pkg/core/log"
+	"github.com/loggie-io/loggie/pkg/util/persistence/reg"
+	_ "github.com/mattn/go-sqlite3"
+	"github.com/pkg/errors"
 )
 
 const (
@@ -351,7 +352,6 @@ func (cd ColumnDesc) toAlterSql() string {
 		if cd.notNull {
 			alterSql.WriteString(" NOT NULL")
 		} else {
-
 			alterSql.WriteString(" NULL")
 		}
 	}

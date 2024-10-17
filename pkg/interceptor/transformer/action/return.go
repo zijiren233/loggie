@@ -35,8 +35,7 @@ func init() {
 	})
 }
 
-type Return struct {
-}
+type Return struct{}
 
 func NewReturn(args []string) (*Return, error) {
 	if len(args) != 0 {

@@ -18,8 +18,9 @@ package kafka
 
 import (
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/pattern"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/pattern"
 
 	"github.com/loggie-io/loggie/pkg/core/log"
 
@@ -86,7 +87,6 @@ func (c *Config) SetDefaults() {
 }
 
 func (c *Config) Validate() error {
-
 	if err := pattern.Validate(c.Topic); err != nil {
 		return err
 	}

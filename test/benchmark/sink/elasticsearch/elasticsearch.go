@@ -1,6 +1,9 @@
 package main
 
 import (
+	"net/http"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/control"
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/core/interceptor"
@@ -13,8 +16,6 @@ import (
 	"github.com/loggie-io/loggie/pkg/interceptor/retry"
 	"github.com/loggie-io/loggie/pkg/pipeline"
 	"github.com/loggie-io/loggie/pkg/queue/channel"
-	"net/http"
-	"time"
 
 	_ "github.com/loggie-io/loggie/pkg/include"
 )

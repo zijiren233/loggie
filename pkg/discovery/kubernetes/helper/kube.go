@@ -182,8 +182,8 @@ func LabelsSubset(i map[string]string, j map[string]string) bool {
 }
 
 func PathsInNode(podLogDirPrefix string, kubeletRootDir string, rootFsCollectionEnabled bool, runtime runtime.Runtime,
-	paths []string, pod *corev1.Pod, containerId string, containerName string) ([]string, error) {
-
+	paths []string, pod *corev1.Pod, containerId string, containerName string,
+) ([]string, error) {
 	var nodePaths []string
 	var containerRootfsPaths []string
 
@@ -320,7 +320,6 @@ func getEnvInPod(pod *corev1.Pod, containerName string) []corev1.EnvVar {
 }
 
 func extractFieldPathAsString(pod *corev1.Pod, fieldPath string) string {
-
 	if path, subscript, ok := splitMaybeSubscriptedPath(fieldPath); ok {
 		switch path {
 		case "metadata.annotations":
@@ -435,7 +434,8 @@ func envVarsToMap(envs []corev1.EnvVar) map[string]string {
 }
 
 func nodePathByContainerPath(pathPattern string, pod *corev1.Pod, volumeName string, volumeMountPath string, subPathRes string,
-	kubeletRootDir string, containerId string, rootFsCollectionEnabled bool, containerRuntime runtime.Runtime) (string, error) {
+	kubeletRootDir string, containerId string, rootFsCollectionEnabled bool, containerRuntime runtime.Runtime,
+) (string, error) {
 	for _, vol := range pod.Spec.Volumes {
 		if vol.Name != volumeName {
 			continue
@@ -571,7 +571,6 @@ func getPVNodePath(pathPattern string, volumeMountPath string, containerId strin
 }
 
 func GetMatchedPodLabel(labelKeys []string, pod *corev1.Pod) map[string]string {
-
 	if len(labelKeys) == 1 && labelKeys[0] == "*" {
 		return pod.Labels
 	}
@@ -585,7 +584,6 @@ func GetMatchedPodLabel(labelKeys []string, pod *corev1.Pod) map[string]string {
 }
 
 func GetMatchedPodAnnotation(annotationKeys []string, pod *corev1.Pod) map[string]string {
-
 	if len(annotationKeys) == 1 && annotationKeys[0] == "*" {
 		return pod.Annotations
 	}

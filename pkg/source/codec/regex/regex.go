@@ -1,11 +1,12 @@
 package regex
 
 import (
+	"regexp"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/source/codec"
 	"github.com/loggie-io/loggie/pkg/util"
-	"regexp"
 )
 
 const (

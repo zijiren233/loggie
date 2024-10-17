@@ -18,6 +18,7 @@ package controller
 
 import (
 	"fmt"
+
 	"github.com/loggie-io/loggie/pkg/util/yaml"
 
 	"github.com/loggie-io/loggie/pkg/control"
@@ -262,7 +263,6 @@ func (c *Controller) reconcileLogConfigAddOrUpdate(lgc *logconfigv1beta1.LogConf
 }
 
 func (c *Controller) handleAllTypesAddOrUpdate(lgc *logconfigv1beta1.LogConfig) (err error, keys []string) {
-
 	// set defaults
 	c.setDefaultsLogConfigFields(lgc)
 

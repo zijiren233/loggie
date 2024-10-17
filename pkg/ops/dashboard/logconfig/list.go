@@ -18,10 +18,11 @@ package logconfig
 
 import (
 	"fmt"
+	"strings"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/loggie-io/loggie/pkg/ops/dashboard/gui"
 	"github.com/rivo/tview"
-	"strings"
 )
 
 const ListPanelName = "LogConfigList"

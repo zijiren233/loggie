@@ -17,9 +17,10 @@ limitations under the License.
 package franz
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/pattern"
 	"strings"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/pattern"
 )
 
 const defaultKerberosConfigPath = "/etc/krb5.conf"
@@ -80,7 +81,6 @@ type GSSAPI struct {
 }
 
 func (c *Config) Validate() error {
-
 	if err := pattern.Validate(c.Topic); err != nil {
 		return err
 	}
@@ -147,7 +147,7 @@ func (cfg *Config) convertKfkSecurity() {
 					}
 				}
 				if cfg.SASL.GSSAPI.AuthType == 1 {
-					//UserName and password
+					// UserName and password
 					if UserName, ok := configMap["username"]; ok {
 						cfg.SASL.GSSAPI.UserName = UserName
 					}
@@ -155,7 +155,7 @@ func (cfg *Config) convertKfkSecurity() {
 						cfg.SASL.GSSAPI.Password = password
 					}
 				} else {
-					//Keytab
+					// Keytab
 					if keyTab, ok := configMap["keyTab"]; ok {
 						cfg.SASL.GSSAPI.KeyTabPath = keyTab
 					}

@@ -3,13 +3,14 @@ package prometheus_exporter
 import (
 	ctx "context"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/json"
-	"github.com/loggie-io/loggie/pkg/util/pattern"
-	timeutil "github.com/loggie-io/loggie/pkg/util/time"
 	"io"
 	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
+	"github.com/loggie-io/loggie/pkg/util/pattern"
+	timeutil "github.com/loggie-io/loggie/pkg/util/time"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"

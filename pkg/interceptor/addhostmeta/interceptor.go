@@ -18,6 +18,7 @@ package addhostmeta
 
 import (
 	"fmt"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/source"
 	"github.com/loggie-io/loggie/pkg/pipeline"

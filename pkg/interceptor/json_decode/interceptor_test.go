@@ -39,8 +39,8 @@ var interceptor = &Interceptor{
 }
 
 func TestInterceptor_process(t *testing.T) {
-	var header = make(map[string]interface{})
-	var message = []byte("{\"log\":\"tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755)\\r\\n\",\"stream\":\"stdout\",\"time\":\"2021-06-02T03:20:54.260571439Z\"}")
+	header := make(map[string]interface{})
+	message := []byte("{\"log\":\"tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755)\\r\\n\",\"stream\":\"stdout\",\"time\":\"2021-06-02T03:20:54.260571439Z\"}")
 
 	type fields struct {
 		name   string
@@ -82,22 +82,19 @@ func TestInterceptor_process(t *testing.T) {
 			if strings.TrimSpace(string(tt.args.e.Body())) != strings.TrimSpace(string(tt.want)) {
 				t.Errorf("process() error = %v, want: %v", err, tt.want)
 			}
-
 		})
 	}
 }
 
 func BenchmarkInterceptor_process(t *testing.B) {
-
 	t.ResetTimer()
 	t.StartTimer()
 	for i := 0; i < t.N; i++ {
 
-		var header = make(map[string]interface{})
-		var message = []byte("{\"log\":\"tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755)\\r\\n\",\"stream\":\"stdout\",\"time\":\"2021-06-02T03:20:54.260571439Z\"}")
-		var ev = event.NewEvent(header, message)
+		header := make(map[string]interface{})
+		message := []byte("{\"log\":\"tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755)\\r\\n\",\"stream\":\"stdout\",\"time\":\"2021-06-02T03:20:54.260571439Z\"}")
+		ev := event.NewEvent(header, message)
 
 		interceptor.process(ev)
 	}
-
 }

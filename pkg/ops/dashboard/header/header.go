@@ -17,9 +17,10 @@ limitations under the License.
 package header
 
 import (
+	"strings"
+
 	"github.com/gdamore/tcell/v2"
 	"github.com/rivo/tview"
-	"strings"
 )
 
 type Header struct {

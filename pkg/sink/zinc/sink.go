@@ -19,13 +19,14 @@ package zinc
 import (
 	"crypto/tls"
 	"fmt"
+	"net/http"
+	"strings"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/core/result"
 	"github.com/loggie-io/loggie/pkg/pipeline"
 	"github.com/loggie-io/loggie/pkg/sink/codec"
-	"net/http"
-	"strings"
 )
 
 const Type = "zinc"

@@ -17,10 +17,11 @@ limitations under the License.
 package condition
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestHasPrefix_Check(t *testing.T) {

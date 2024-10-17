@@ -1,6 +1,8 @@
 package index
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/control"
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/core/interceptor"
@@ -11,11 +13,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"testing"
 )
 
 func TestTypePodIndex(t *testing.T) {
-
 	index := NewLogConfigTypePodIndex()
 
 	lgc := &logconfigv1beta1.LogConfig{

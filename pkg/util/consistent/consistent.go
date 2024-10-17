@@ -256,7 +256,7 @@ func (c *Consistent) hashKeyFnv(key string) uint32 {
 
 func (c *Consistent) updateSortedHashes() {
 	hashes := c.sortedHashes[:0]
-	//reallocate if we're holding on to too much (1/4th)
+	// reallocate if we're holding on to too much (1/4th)
 	if cap(c.sortedHashes)/(c.NumberOfReplicas*4) > len(c.circle) {
 		hashes = nil
 	}

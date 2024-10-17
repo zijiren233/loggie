@@ -64,7 +64,6 @@ func (l *Listener) Subscribe(event eventbus.Event) {
 	case l.bufferChan <- &event:
 	default:
 	}
-
 }
 
 func (l *Listener) run() {
@@ -85,7 +84,6 @@ func (l *Listener) process(e *eventbus.Event) {
 	} else if e.Topic == eventbus.ErrorTopic {
 		l.processErrorTopic(e)
 	}
-
 }
 
 func (l *Listener) processWebhookTopic(e *eventbus.Event) {
@@ -98,7 +96,6 @@ func (l *Listener) processWebhookTopic(e *eventbus.Event) {
 	if (*data).Header()[event.ReasonKey] == event.NoDataKey {
 		l.sink.sendAlerts([]api.Event{*data}, l.SendNoDataAlertAtOnce)
 	}
-
 }
 
 func (l *Listener) processErrorTopic(e *eventbus.Event) {

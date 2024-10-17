@@ -19,11 +19,12 @@ package controller
 import (
 	"context"
 	"fmt"
+	"reflect"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/discovery/kubernetes/runtime"
 	"github.com/loggie-io/loggie/pkg/util/pattern"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"reflect"
-	"time"
 
 	"github.com/loggie-io/loggie/pkg/core/log"
 	logconfigClientset "github.com/loggie-io/loggie/pkg/discovery/kubernetes/client/clientset/versioned"
@@ -112,7 +113,6 @@ func NewController(
 	vmInformer logconfigInformers.VmInformer,
 	runtime runtime.Runtime,
 ) *Controller {
-
 	log.Info("Creating event broadcaster")
 	eventBroadcaster := record.NewBroadcaster()
 	eventBroadcaster.StartRecordingToSink(&typedcorev1.EventSinkImpl{Interface: kubeClientset.CoreV1().Events("")})
@@ -519,7 +519,6 @@ func (c *Controller) processNextWorkItem() bool {
 		// log.Debug("Successfully synced '%s'", element)
 		return nil
 	}(obj)
-
 	if err != nil {
 		utilruntime.HandleError(err)
 		return true

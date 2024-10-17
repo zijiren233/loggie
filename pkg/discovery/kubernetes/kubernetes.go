@@ -18,6 +18,8 @@ package kubernetes
 
 import (
 	"context"
+	"strings"
+
 	"github.com/loggie-io/loggie/pkg/core/log"
 	logconfigclientset "github.com/loggie-io/loggie/pkg/discovery/kubernetes/client/clientset/versioned"
 	"github.com/loggie-io/loggie/pkg/discovery/kubernetes/controller"
@@ -29,7 +31,6 @@ import (
 	kubeclientset "k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/clientcmd"
-	"strings"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	kubeinformers "k8s.io/client-go/informers"
@@ -145,8 +146,8 @@ func (d *Discovery) Start(stopCh <-chan struct{}) {
 }
 
 func (d *Discovery) VmModeRun(stopCh <-chan struct{}, kubeClient kubeclientset.Interface, logConfigClient logconfigclientset.Interface,
-	logConfInformerFactory logconfigInformer.SharedInformerFactory, kubeInformerFactory kubeinformers.SharedInformerFactory) {
-
+	logConfInformerFactory logconfigInformer.SharedInformerFactory, kubeInformerFactory kubeinformers.SharedInformerFactory,
+) {
 	metadataName := tryToFindRelatedVm(logConfigClient, d.config.NodeName)
 	if metadataName == "" {
 		log.Panic("cannot find loggie agent related vm")

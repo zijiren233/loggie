@@ -19,13 +19,14 @@ package log
 import (
 	"flag"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/core/log/spi"
-	"github.com/rs/zerolog"
-	"gopkg.in/natefinch/lumberjack.v2"
 	"io"
 	"os"
 	"path"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/core/log/spi"
+	"github.com/rs/zerolog"
+	"gopkg.in/natefinch/lumberjack.v2"
 )
 
 var (
@@ -115,7 +116,7 @@ func NewLogger(config *LoggerConfig) *Logger {
 }
 
 func newRollingFile(directory string, filename string, maxBackups int, maxSize int, maxAge int) io.Writer {
-	if err := os.MkdirAll(directory, 0744); err != nil {
+	if err := os.MkdirAll(directory, 0o744); err != nil {
 		panic(fmt.Sprintf("can't create log directory %s", directory))
 	}
 

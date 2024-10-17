@@ -17,6 +17,8 @@ limitations under the License.
 package controller
 
 import (
+	"strings"
+
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/core/source"
@@ -24,7 +26,6 @@ import (
 	"github.com/loggie-io/loggie/pkg/discovery/kubernetes/helper"
 	"github.com/loggie-io/loggie/pkg/util/pattern"
 	"github.com/pkg/errors"
-	"strings"
 )
 
 func (c *Controller) handleLogConfigTypeVm(lgc *logconfigv1beta1.LogConfig) error {

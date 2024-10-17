@@ -18,11 +18,12 @@ package action
 
 import (
 	"fmt"
+	"strconv"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/util/eventops"
 	"github.com/pkg/errors"
-	"strconv"
 )
 
 const (

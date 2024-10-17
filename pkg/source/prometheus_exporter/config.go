@@ -1,9 +1,10 @@
 package prometheus_exporter
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/pattern"
 	"net/url"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/pattern"
 )
 
 type Config struct {

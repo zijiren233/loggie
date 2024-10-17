@@ -17,8 +17,9 @@ limitations under the License.
 package info
 
 import (
-	"github.com/loggie-io/loggie/pkg/core/global"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/core/global"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/eventbus"

@@ -48,8 +48,7 @@ func NewFakeInvoker() *AbstractInvoker {
 }
 
 // publish event to queue
-type PublishInvoker struct {
-}
+type PublishInvoker struct{}
 
 func (i *PublishInvoker) Invoke(invocation Invocation) api.Result {
 	invocation.Queue.In(invocation.Event)

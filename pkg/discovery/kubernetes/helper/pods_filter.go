@@ -87,7 +87,6 @@ func (p *PodsFilter) getPodsByLabelSelector() ([]*corev1.Pod, error) {
 // Filter Filter pods
 func (p *PodsFilter) Filter() ([]*corev1.Pod, error) {
 	pods, err := p.getPodsByLabelSelector()
-
 	if err != nil {
 		return nil, err
 	}

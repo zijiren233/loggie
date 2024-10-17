@@ -18,10 +18,11 @@ package persistence
 
 import (
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/persistence/driver"
-	"github.com/loggie-io/loggie/pkg/util/persistence/reg"
 	"sync"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/persistence/driver"
+	"github.com/loggie-io/loggie/pkg/util/persistence/reg"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"

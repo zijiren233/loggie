@@ -68,7 +68,7 @@ type Job struct {
 	task *WatchTask
 
 	EofCount int
-	//LastActiveTime time.Time
+	// LastActiveTime time.Time
 	lastActiveTime atomic.Value
 
 	lineEnd       []byte

@@ -1,12 +1,13 @@
 package json
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/source/codec"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func Test_pruneCLRF(t *testing.T) {

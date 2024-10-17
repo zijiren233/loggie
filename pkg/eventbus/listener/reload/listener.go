@@ -17,8 +17,9 @@ limitations under the License.
 package reload
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
@@ -103,6 +104,7 @@ func (l *Listener) export() {
 		}
 	}
 }
+
 func (l *Listener) exportPrometheus() {
 	metric := promeExporter.ExportedMetrics{
 		{

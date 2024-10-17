@@ -1,5 +1,3 @@
 package external
 
-var (
-	Cluster string
-)
+var Cluster string

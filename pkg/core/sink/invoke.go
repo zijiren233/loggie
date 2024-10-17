@@ -40,8 +40,7 @@ func (ai *AbstractInvoker) Invoke(invocation Invocation) api.Result {
 	return ai.DoInvoke(invocation)
 }
 
-type SubscribeInvoker struct {
-}
+type SubscribeInvoker struct{}
 
 func (si *SubscribeInvoker) Invoke(invocation Invocation) api.Result {
 	pool := invocation.FlowPool

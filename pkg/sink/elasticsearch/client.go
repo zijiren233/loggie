@@ -20,6 +20,10 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
+
 	es "github.com/elastic/go-elasticsearch/v7"
 	jsoniter "github.com/json-iterator/go"
 	"github.com/loggie-io/loggie/pkg/core/api"
@@ -29,14 +33,9 @@ import (
 	"github.com/loggie-io/loggie/pkg/util/pattern"
 	"github.com/loggie-io/loggie/pkg/util/runtime"
 	"github.com/pkg/errors"
-	"os"
-	"strconv"
-	"strings"
 )
 
-var (
-	json = jsoniter.ConfigFastest
-)
+var json = jsoniter.ConfigFastest
 
 type ClientSet struct {
 	config *Config
@@ -121,7 +120,8 @@ type Client interface {
 }
 
 func NewClient(config *Config, cod codec.Codec, indexPattern *pattern.Pattern, documentIdPattern *pattern.Pattern,
-	defaultIndexPattern *pattern.Pattern) (*ClientSet, error) {
+	defaultIndexPattern *pattern.Pattern,
+) (*ClientSet, error) {
 	for i, h := range config.Hosts {
 		if !strings.HasPrefix(h, "http") && !strings.HasPrefix(h, "https") {
 			config.Hosts[i] = fmt.Sprintf("http://%s", h)

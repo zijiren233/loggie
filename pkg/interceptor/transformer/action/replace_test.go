@@ -98,7 +98,6 @@ func TestReplace_act(t *testing.T) {
 			err := r.act(tt.args.e)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, tt.args.e)
-
 		})
 	}
 }
@@ -157,7 +156,6 @@ func TestReplaceRegexAct(t *testing.T) {
 			err := r.act(tt.args.e)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, tt.args.e)
-
 		})
 	}
 }

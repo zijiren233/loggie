@@ -17,9 +17,10 @@ limitations under the License.
 package sink
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"strings"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
@@ -118,7 +119,6 @@ func (l *Listener) run() {
 }
 
 func (l *Listener) exportPrometheus() {
-
 	metrics := promeExporter.ExportedMetrics{}
 	for _, d := range l.data {
 		m := promeExporter.ExportedMetrics{
@@ -172,7 +172,6 @@ func (l *Listener) compute() {
 }
 
 func (l *Listener) clean() {
-
 	for _, d := range l.data {
 		d.SuccessEventCount = 0
 		d.FailEventCount = 0
@@ -201,5 +200,4 @@ func (l *Listener) consumer(e eventbus.SinkMetricData) {
 	if e.GoroutinePoolSize != 0 {
 		d.GoroutinePoolSize = e.GoroutinePoolSize
 	}
-
 }

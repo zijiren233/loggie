@@ -1,11 +1,12 @@
 package action
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestSplit_act(t *testing.T) {
@@ -56,7 +57,6 @@ func TestSplit_act(t *testing.T) {
 			err := r.act(tt.args.e)
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, tt.args.e)
-
 		})
 	}
 }

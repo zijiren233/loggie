@@ -18,8 +18,6 @@ package alertmanager
 
 import (
 	"bytes"
-	"github.com/loggie-io/loggie/pkg/util/json"
-	"github.com/pkg/errors"
 	"io"
 	"net/http"
 	"strconv"
@@ -27,6 +25,9 @@ import (
 	"sync"
 	"text/template"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
+	"github.com/pkg/errors"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
@@ -103,7 +104,6 @@ type AlertEvent struct {
 }
 
 func (a *AlertManager) SendAlert(events []*api.Event, sendAtOnce bool) {
-
 	var alerts []event.Alert
 	for _, e := range events {
 		alert := event.NewAlert(*e, a.LineLimit)
@@ -196,6 +196,7 @@ func makeTemplate(temp string) (*template.Template, error) {
 func escape(s string) string {
 	return strconv.Quote(s)
 }
+
 func pruneEscape(s string) string {
 	raw := strconv.Quote(s)
 	raw = strings.TrimPrefix(raw, `"`)

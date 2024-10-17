@@ -17,9 +17,10 @@ limitations under the License.
 package expression
 
 import (
-	"github.com/pkg/errors"
 	"regexp"
 	"strings"
+
+	"github.com/pkg/errors"
 )
 
 var expressionRegex = regexp.MustCompile(`^(?P<action>\w+)\(.*\)$`)

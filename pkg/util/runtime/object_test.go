@@ -17,10 +17,11 @@ limitations under the License.
 package runtime
 
 import (
-	"github.com/stretchr/testify/assert"
 	"reflect"
 	"regexp"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 var data = map[string]interface{}{
@@ -164,7 +165,6 @@ func TestObject_DelPaths(t *testing.T) {
 			if !reflect.DeepEqual(obj, tt.want) {
 				t.Errorf("DelPaths() = %v, want %v", obj, tt.want)
 			}
-
 		})
 	}
 }

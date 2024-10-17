@@ -20,13 +20,14 @@ package driver
 
 import (
 	"fmt"
+	"math"
+	"time"
+
 	"github.com/dgraph-io/badger/v3"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/util/json"
 	"github.com/loggie-io/loggie/pkg/util/persistence/reg"
 	"github.com/pkg/errors"
-	"math"
-	"time"
 )
 
 type Engine struct {
@@ -35,8 +36,7 @@ type Engine struct {
 	stop chan struct{}
 }
 
-type Logger struct {
-}
+type Logger struct{}
 
 func (l *Logger) Errorf(format string, args ...interface{}) {
 	log.Error(format, args...)

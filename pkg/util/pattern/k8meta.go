@@ -17,11 +17,12 @@ limitations under the License.
 package pattern
 
 import (
+	"strings"
+
 	"github.com/loggie-io/loggie/pkg/discovery/kubernetes/apis/loggie/v1beta1"
 	logconfigv1beta1 "github.com/loggie-io/loggie/pkg/discovery/kubernetes/apis/loggie/v1beta1"
 	"github.com/loggie-io/loggie/pkg/discovery/kubernetes/helper"
 	corev1 "k8s.io/api/core/v1"
-	"strings"
 )
 
 const (
@@ -84,6 +85,7 @@ func NewTypeVmFieldsData(vm *v1beta1.Vm, clusterlogconfig string) *TypeVmFieldsD
 func IsK8sVar(key string) bool {
 	return strings.HasPrefix(key, k8sToken)
 }
+
 func (p *Pattern) K8sMatcherRender(key string) string {
 	field := strings.TrimLeft(key, k8sToken)
 

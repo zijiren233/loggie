@@ -17,10 +17,11 @@ limitations under the License.
 package filesource
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"

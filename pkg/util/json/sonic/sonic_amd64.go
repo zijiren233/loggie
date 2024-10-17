@@ -21,8 +21,7 @@ import (
 	jsoniter "github.com/json-iterator/go"
 )
 
-type Sonic struct {
-}
+type Sonic struct{}
 
 func (s *Sonic) Marshal(v interface{}) ([]byte, error) {
 	return json.ConfigFastest.Marshal(v)

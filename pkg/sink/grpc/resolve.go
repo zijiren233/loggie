@@ -27,8 +27,7 @@ const (
 	collectorServiceName = "collector.service.com"
 )
 
-type ClientResolver struct {
-}
+type ClientResolver struct{}
 
 func NewBuilder(hosts []string) resolver.Builder {
 	return &collectorBuilder{hosts: hosts}

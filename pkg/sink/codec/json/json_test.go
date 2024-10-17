@@ -17,9 +17,10 @@ limitations under the License.
 package json
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/sink/codec"
 	"github.com/stretchr/testify/assert"
-	"testing"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"

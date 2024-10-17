@@ -91,7 +91,6 @@ func TestLogAlertData_Fingerprint(t *testing.T) {
 			if (lad1.Fingerprint() == lad2.Fingerprint()) != tt.equal {
 				t.Errorf("lad1 Fingerprint() = %v, lad2 Fingerprint() = %v", lad1.Fingerprint(), lad2.Fingerprint())
 			}
-
 		})
 	}
 }

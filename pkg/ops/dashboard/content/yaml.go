@@ -19,8 +19,9 @@ package content
 import (
 	"bufio"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/ops/dashboard/gui"
 	"strings"
+
+	"github.com/loggie-io/loggie/pkg/ops/dashboard/gui"
 )
 
 func YamlHighlight(str string, filter string) string {

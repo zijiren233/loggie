@@ -17,11 +17,12 @@ limitations under the License.
 package reloader
 
 import (
+	"os"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/core/interceptor"
 	"github.com/loggie-io/loggie/pkg/util/yaml"
 	"github.com/pkg/errors"
-	"os"
-	"time"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"

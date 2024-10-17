@@ -19,10 +19,11 @@ package header
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	"github.com/loggie-io/loggie/pkg/ops/dashboard/gui"
 	"github.com/rivo/tview"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"strings"
 )
 
 type Info struct {

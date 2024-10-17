@@ -78,7 +78,6 @@ func (i *Interceptor) Start() error {
 }
 
 func (i *Interceptor) Stop() {
-
 }
 
 func (i *Interceptor) Intercept(invoker source.Invoker, invocation source.Invocation) api.Result {

@@ -17,8 +17,9 @@ limitations under the License.
 package time
 
 import (
-	"github.com/pkg/errors"
 	"time"
+
+	"github.com/pkg/errors"
 )
 
 const (

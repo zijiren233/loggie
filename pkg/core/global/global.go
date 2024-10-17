@@ -16,9 +16,7 @@ limitations under the License.
 
 package global
 
-var (
-	NodeName string
-)
+var NodeName string
 
 var _VERSION_ = "unknown"
 

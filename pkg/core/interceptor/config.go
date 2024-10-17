@@ -18,6 +18,7 @@ package interceptor
 
 import (
 	"fmt"
+
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 )
 

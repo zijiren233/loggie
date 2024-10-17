@@ -19,10 +19,11 @@ package elasticsearch
 import (
 	"context"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/core/log"
-	"github.com/pkg/errors"
 	"strings"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/core/log"
+	"github.com/pkg/errors"
 
 	es "github.com/olivere/elastic/v7"
 )

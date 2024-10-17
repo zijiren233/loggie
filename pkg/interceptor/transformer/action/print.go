@@ -36,8 +36,7 @@ func init() {
 	})
 }
 
-type Print struct {
-}
+type Print struct{}
 
 func NewPrint(args []string) (*Print, error) {
 	aCount := len(args)

@@ -66,8 +66,7 @@ func WithClock(clock Clock) Option {
 	return clockOption{clock: clock}
 }
 
-type unLockOption struct {
-}
+type unLockOption struct{}
 
 func (uo unLockOption) apply(c *config) {
 	c.lock = false
@@ -77,8 +76,7 @@ func WithoutLock() Option {
 	return unLockOption{}
 }
 
-type highPrecisionOption struct {
-}
+type highPrecisionOption struct{}
 
 func (hpo highPrecisionOption) apply(c *config) {
 	c.highPrecision = true

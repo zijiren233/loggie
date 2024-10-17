@@ -17,9 +17,10 @@ limitations under the License.
 package time
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/yaml"
 	"testing"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/yaml"
 )
 
 func TestTimeFormatNow(t *testing.T) {

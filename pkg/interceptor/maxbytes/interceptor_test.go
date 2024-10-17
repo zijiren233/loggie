@@ -1,10 +1,11 @@
 package maxbytes
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func Test_maxBytes(t *testing.T) {

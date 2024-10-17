@@ -17,10 +17,11 @@ limitations under the License.
 package file
 
 import (
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/util"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func Test_charset(t *testing.T) {

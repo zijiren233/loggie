@@ -56,7 +56,8 @@ type WatchTask struct {
 }
 
 func NewWatchTask(epoch *pipeline.Epoch, pipelineName string, sourceName string, config CollectConfig,
-	eventPool *event.Pool, productFunc api.ProductFunc, activeChan chan *Job, sourceFields map[string]interface{}) *WatchTask {
+	eventPool *event.Pool, productFunc api.ProductFunc, activeChan chan *Job, sourceFields map[string]interface{},
+) *WatchTask {
 	w := &WatchTask{
 		epoch:        epoch,
 		pipelineName: pipelineName,

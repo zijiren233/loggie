@@ -1,10 +1,11 @@
 package file
 
 import (
-	"github.com/loggie-io/loggie/pkg/core/log"
-	"github.com/loggie-io/loggie/pkg/util"
 	"strings"
 	"sync"
+
+	"github.com/loggie-io/loggie/pkg/core/log"
+	"github.com/loggie-io/loggie/pkg/util"
 )
 
 // LineTerminator is the option storing the line terminator characters

@@ -111,7 +111,6 @@ func (k *unix) ProductLoop(productFunc api.ProductFunc) {
 
 		go k.handleConn(ctx, conn, productFunc)
 	}
-
 }
 
 func (k *unix) handleConn(ctx context.Context, conn net.Conn, productFunc api.ProductFunc) {

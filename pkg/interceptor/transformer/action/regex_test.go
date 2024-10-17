@@ -17,15 +17,15 @@ limitations under the License.
 package action
 
 import (
+	"regexp"
+	"testing"
+
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"
 	"github.com/loggie-io/loggie/pkg/util"
-	"regexp"
-	"testing"
 )
 
 func TestRegex_act(t *testing.T) {
-
 	const pattern = `(?<ip>\S+) (?<id>\S+) (?<u>\S+) (?<time>\[.*?\]) (?<url>\".*?\") (?<status>\S+) (?<size>\S+)`
 
 	type fields struct {

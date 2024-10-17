@@ -18,11 +18,12 @@ package normalize
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/loggie-io/loggie/pkg/eventbus/export/logger"
 	promeExporter "github.com/loggie-io/loggie/pkg/eventbus/export/prometheus"
 	"github.com/loggie-io/loggie/pkg/util/json"
 	"github.com/prometheus/client_golang/prometheus"
-	"time"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
@@ -151,7 +152,6 @@ func buildFQName(name string) string {
 }
 
 func (l *Listener) exportPrometheus() {
-
 	if len(l.normalizeMetric) == 0 {
 		return
 	}

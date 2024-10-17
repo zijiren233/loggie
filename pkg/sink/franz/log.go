@@ -17,15 +17,15 @@ limitations under the License.
 package franz
 
 import (
+	"strings"
+
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/util/json"
 	"github.com/rs/zerolog"
 	"github.com/twmb/franz-go/pkg/kgo"
-	"strings"
 )
 
-type Logger struct {
-}
+type Logger struct{}
 
 func (*Logger) Level() kgo.LogLevel {
 	switch log.Level() {

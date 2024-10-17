@@ -19,17 +19,18 @@ package action
 import (
 	"bufio"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/core/api"
-	"github.com/loggie-io/loggie/pkg/core/cfg"
-	"github.com/loggie-io/loggie/pkg/core/log"
-	"github.com/loggie-io/loggie/pkg/util/eventops"
-	"github.com/pkg/errors"
 	"io"
 	"net/http"
 	"os"
 	"path"
 	"regexp"
 	"strings"
+
+	"github.com/loggie-io/loggie/pkg/core/api"
+	"github.com/loggie-io/loggie/pkg/core/cfg"
+	"github.com/loggie-io/loggie/pkg/core/log"
+	"github.com/loggie-io/loggie/pkg/util/eventops"
+	"github.com/pkg/errors"
 )
 
 const (
@@ -135,7 +136,6 @@ func (r *grokAction) act(e api.Event) error {
 		for field, value := range rst {
 			eventops.Set(e, field, value)
 		}
-
 	} else {
 		eventops.Set(e, r.to, rst)
 	}

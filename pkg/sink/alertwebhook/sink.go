@@ -19,12 +19,13 @@ package alertwebhook
 import (
 	"bytes"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"io"
 	"net/http"
 	"strings"
 	"sync"
 	"text/template"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/event"

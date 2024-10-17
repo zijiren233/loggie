@@ -19,12 +19,13 @@ package file
 import (
 	"bytes"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"io"
 	"net/http"
 	"os"
 	"strconv"
 	"sync"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/hpcloud/tail"
 	"github.com/loggie-io/loggie/pkg/core/log"
@@ -49,7 +50,6 @@ func (s *Source) HandleHttp() {
 }
 
 func proxyFileHandler(writer http.ResponseWriter, request *http.Request) {
-
 	filename := request.URL.Query().Get("filename")
 	if filename == "" {
 		writer.WriteHeader(http.StatusBadRequest)
@@ -112,10 +112,8 @@ const (
 	blockSize = 1024
 )
 
-var (
-	// eol is the end-of-line sign in the log.
-	eol = []byte{'\n'}
-)
+// eol is the end-of-line sign in the log.
+var eol = []byte{'\n'}
 
 func findTailLineStartIndex(f io.ReadSeeker, n int64) (int64, error) {
 	if n < 0 {
@@ -155,7 +153,6 @@ const (
 )
 
 func (s *Source) registryHandler(writer http.ResponseWriter, request *http.Request) {
-
 	format := request.URL.Query().Get("format")
 	if format != jsonFormat && format != textFormat {
 		format = jsonFormat
@@ -178,7 +175,6 @@ func (s *Source) registryHandler(writer http.ResponseWriter, request *http.Reque
 		} else {
 			out, err = json.Marshal(registry)
 		}
-
 	} else {
 		for _, r := range registry {
 			o := []byte(fmt.Sprintf("%+v \n", r))

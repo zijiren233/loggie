@@ -18,6 +18,7 @@ package sink
 
 import (
 	"errors"
+
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/core/concurrency"
 	"github.com/loggie-io/loggie/pkg/sink/codec"

@@ -19,9 +19,10 @@ package inspect
 import (
 	"errors"
 	"flag"
+	"os"
+
 	"github.com/loggie-io/loggie/pkg/ops/dashboard"
 	"github.com/loggie-io/loggie/pkg/ops/dashboard/gui"
-	"os"
 )
 
 const SubCommandInspect = "inspect"

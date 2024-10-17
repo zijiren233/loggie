@@ -165,7 +165,6 @@ func TestInterceptor_match(t *testing.T) {
 						}
 					}
 				}
-
 			}
 
 			gotMatched, reason, message := i.match(tt.args.event)

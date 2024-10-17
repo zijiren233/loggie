@@ -71,7 +71,6 @@ func (j *JsonDecode) act(e api.Event) error {
 		if err := json.Unmarshal(rawVal, &header); err != nil {
 			return err
 		}
-
 	} else {
 		tmp := make(map[string]interface{})
 		if err := json.Unmarshal(rawVal, &tmp); err != nil {

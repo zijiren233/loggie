@@ -20,17 +20,16 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/core/global"
 	"os"
+
+	"github.com/loggie-io/loggie/pkg/core/global"
 )
 
 const (
 	SubCommandVersion = "version"
 )
 
-var (
-	versionCmd *flag.FlagSet
-)
+var versionCmd *flag.FlagSet
 
 func init() {
 	versionCmd = flag.NewFlagSet(SubCommandVersion, flag.ExitOnError)

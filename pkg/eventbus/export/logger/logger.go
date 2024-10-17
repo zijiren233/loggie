@@ -17,8 +17,9 @@ limitations under the License.
 package logger
 
 import (
-	"github.com/loggie-io/loggie/pkg/util/json"
 	"time"
+
+	"github.com/loggie-io/loggie/pkg/util/json"
 
 	"github.com/loggie-io/loggie/pkg/core/log"
 )
@@ -127,7 +128,6 @@ func (l *logger) run(config Config) {
 }
 
 func (l *logger) print() {
-
 	var d []byte
 	var err error
 	if l.config.Pretty {

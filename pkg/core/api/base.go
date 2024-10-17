@@ -35,9 +35,11 @@ const (
 	VERSION = "0.0.1"
 )
 
-type Status int32
-type Category string
-type Type string
+type (
+	Status   int32
+	Category string
+	Type     string
+)
 
 type Context interface {
 	Name() string

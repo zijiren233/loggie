@@ -10,7 +10,6 @@ import (
 )
 
 func BenchmarkMaxBytes(b *testing.B) {
-
 	log.InitDefaultLogger()
 
 	invoker := source.NewFakeInvoker()
@@ -60,5 +59,4 @@ func BenchmarkMaxBytes(b *testing.B) {
 			}
 		})
 	}
-
 }

@@ -17,11 +17,12 @@ limitations under the License.
 package eventbus
 
 import (
+	"sync"
+
 	"github.com/loggie-io/loggie/pkg/core/cfg"
 	"github.com/loggie-io/loggie/pkg/core/context"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/eventbus/export/logger"
-	"sync"
 )
 
 // asyncConsumerSize should always be 1 because concurrency may cause panic
@@ -81,7 +82,6 @@ func NewEventCenter(bufferSize int64, asyncConsumerSize int) *EventCenter {
 }
 
 func StartAndRun(config Config) {
-
 	defaultEventCenter.start(config)
 
 	for i := 0; i < defaultEventCenter.asyncConsumerSize; i++ {
@@ -98,7 +98,6 @@ func (ec *EventCenter) registry(subscribe *Subscribe) {
 		log.Panic("listener name(%s) repeat!", subscribe.listenerName)
 	}
 	ec.name2Subscribe[subscribe.listenerName] = subscribe
-
 }
 
 func (ec *EventCenter) registryTemporary(subscribe *Subscribe) {

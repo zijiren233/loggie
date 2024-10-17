@@ -73,5 +73,4 @@ func (d *Dashboard) Start() error {
 }
 
 func (d *Dashboard) Stop() {
-
 }

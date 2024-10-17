@@ -18,14 +18,15 @@ package pattern
 
 import (
 	"fmt"
-	"github.com/loggie-io/loggie/pkg/util/runtime"
-	"github.com/loggie-io/loggie/pkg/util/time"
-	"github.com/stretchr/testify/assert"
-	corev1 "k8s.io/api/core/v1"
 	"os"
 	"reflect"
 	"strings"
 	"testing"
+
+	"github.com/loggie-io/loggie/pkg/util/runtime"
+	"github.com/loggie-io/loggie/pkg/util/time"
+	"github.com/stretchr/testify/assert"
+	corev1 "k8s.io/api/core/v1"
 )
 
 func TestExtract(t *testing.T) {
@@ -181,7 +182,8 @@ func TestObjectPattern(t *testing.T) {
 				obj: runtime.NewObject(map[string]interface{}{
 					"a": map[string]interface{}{
 						"b": "c",
-					}}),
+					},
+				}),
 			},
 			want:    "c",
 			wantErr: false,
@@ -224,7 +226,8 @@ func TestObjectPatternWithStrict(t *testing.T) {
 				obj: runtime.NewObject(map[string]interface{}{
 					"a": map[string]interface{}{
 						"b": "c",
-					}}),
+					},
+				}),
 			},
 			wantErr: true,
 		},
@@ -239,13 +242,11 @@ func TestObjectPatternWithStrict(t *testing.T) {
 
 			_, err = p.WithObject(tt.args.obj).RenderWithStrict()
 			assert.ErrorIs(t, err, ErrEmptyMatcher)
-
 		})
 	}
 }
 
 func TestK8sPattern(t *testing.T) {
-
 	testpod := &corev1.Pod{}
 	testpod.Namespace = "ns1"
 	testpod.Name = "tomcatpod"
