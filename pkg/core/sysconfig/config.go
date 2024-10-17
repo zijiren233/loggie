@@ -38,6 +38,7 @@ type Config struct {
 }
 
 type Loggie struct {
+	DisableDev       bool                        `yaml:"disableDev"`
 	Reload           reloader.ReloadConfig       `yaml:"reload"`
 	Discovery        discovery.Config            `yaml:"discovery"`
 	Http             Http                        `yaml:"http" validate:"dive"`

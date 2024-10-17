@@ -39,6 +39,7 @@ import (
 	_ "github.com/loggie-io/loggie/pkg/include"
 	"github.com/loggie-io/loggie/pkg/ops"
 	"github.com/loggie-io/loggie/pkg/ops/helper"
+	"github.com/loggie-io/loggie/pkg/pipeline"
 	"github.com/loggie-io/loggie/pkg/util/json"
 	"github.com/loggie-io/loggie/pkg/util/persistence"
 	"github.com/loggie-io/loggie/pkg/util/yaml"
@@ -88,6 +89,10 @@ func main() {
 	// system config file
 	syscfg := sysconfig.Config{}
 	cfg.UnpackTypeDefaultsAndValidate(strings.ToLower(configType), globalConfigFile, &syscfg)
+	// disable dev
+	if syscfg.Loggie.DisableDev {
+		pipeline.DisableDev()
+	}
 	// register jsonEngine
 	json.SetDefaultEngine(syscfg.Loggie.JSONEngine)
 	// start eventBus listeners

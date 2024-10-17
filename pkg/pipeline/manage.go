@@ -20,14 +20,45 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/pkg/errors"
-
 	"github.com/loggie-io/loggie/pkg/core/api"
 	"github.com/loggie-io/loggie/pkg/core/log"
 	"github.com/loggie-io/loggie/pkg/core/spi"
+	"github.com/pkg/errors"
 )
 
-var codeFactory = map[string]Factory{}
+var (
+	codeFactory         = map[string]Factory{}
+	disabledCodeFactory = map[string]struct{}{}
+	disabledDev         = false
+)
+
+func DisableDev() {
+	disabledDev = true
+}
+
+func IsDisabledDev() bool {
+	return disabledDev
+}
+
+func EnableDev() {
+	disabledDev = false
+}
+
+func Disable(category api.Category, typename api.Type) {
+	code := codeWithoutName(category, typename)
+	disabledCodeFactory[code] = struct{}{}
+}
+
+func IsDisabled(category api.Category, typename api.Type) bool {
+	code := codeWithoutName(category, typename)
+	_, ok := disabledCodeFactory[code]
+	return ok
+}
+
+func Enable(category api.Category, typename api.Type) {
+	code := codeWithoutName(category, typename)
+	delete(disabledCodeFactory, code)
+}
 
 type Factory func(info Info) api.Component
 
@@ -48,6 +79,12 @@ func Register(category api.Category, typename api.Type, factory Factory) {
 }
 
 func GetWithType(category api.Category, typename api.Type, info Info) (api.Component, error) {
+	if typename == "dev" && IsDisabledDev() {
+		return nil, fmt.Errorf("development component '%s' is disabled", codeWithoutName(category, typename))
+	}
+	if IsDisabled(category, typename) {
+		return nil, fmt.Errorf("component '%s' is disabled", codeWithoutName(category, typename))
+	}
 	code := codeWithoutName(category, typename)
 	factory, ok := codeFactory[code]
 	if !ok {
